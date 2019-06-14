@@ -12,7 +12,7 @@ def adicionarNaTabela(idUser, name, motivo):
 	try :
 		 
 		cursor = connection.cursor()
-		 
+
 		sql =  "INSERT INTO `Banidos` (`idUser`, `Name`, `Motivo`) VALUES (%s, %s, %s) "
 		  
 		# Execute sql, and pass 4 parameters.
@@ -22,5 +22,7 @@ def adicionarNaTabela(idUser, name, motivo):
 	 
 	finally: 
 		connection.close()
+
+
 		
 
