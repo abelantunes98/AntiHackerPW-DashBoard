@@ -15,15 +15,15 @@ def listarBloqueados():
 	try:
 		
 		cursor = connection.cursor()
-		sql = "Select ID, name from users Where passwd = %s "
+		sql = "Select idUser, name, motivo from banidos Where idUser is not null"
 
 		# Execute sql, and pass 1 parameter.
-		numUsers = cursor.execute(sql, ("BANIDO_GOT"))
+		numUsers = cursor.execute(sql)
 		
 		if numUsers > 0:
 			
 			for row in cursor:
-				print "ID:", row["ID"], " Nome:", row["name"]
+				print "ID:", row["idUser"], " Nome:", row["nome"], "Motivo:", row["motivo"]
 		
 		else:
 			
